@@ -3,14 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React JS</title>
+    <title>CheckBox</title>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <link rel="stylesheet" href="style/style.css">
+<style>
+    .option {
+        display: block;
+        margin-bottom: 0.25e;
+}
+    .check {
+padding-left: 1.2em;
+
+    }
+
+    .check__input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: absolute;
+        appearance: none;
+}
+
+.check__box {
+    margin-left: -1em;
+    margin-top: 0.15em;
+    position: absolute;
+    width: 0.7em;
+    height: 0.7em;
+
+    /* background-color: tomato; */
+    border: 1px solid tomato;
+    border-radius: 30%;
+}
+
+/* //checked */
+
+.check__input:checked + .check__box {
+    background-image: url(/img/chek.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* focused */
+.check__input:focus + .check__box {
+    border: 1.2px solid rgb(255, 83, 71);
+    border-radius: 0%;
+}
+
+</style>
+
+
 </head>
 <body>
 
+    <label class="check option" >
+        <input class="check__input " type="checkbox">
+        <span class="check__box"></span>
+        Первый
+    </label>
 
+    <label class="check option">
+        <input class="check__input " type="checkbox" checked>
+        <span class="check__box"></span>
+        Второй
+    </label>
+
+    <label class="check option">
+        <input class="check__input " type="checkbox" disabled>
+        <span class="check__box"></span>
+        Третий
+    </label>
+
+    <label class="check option">
+        <input class="check__input " type="checkbox" checked disabled>
+        <span class="check__box"></span>
+        Четвертый
+    </label>
 
     <script src="js/index.js"> </script>
 </body>
